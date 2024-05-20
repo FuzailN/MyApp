@@ -4,4 +4,4 @@ services:
   web:
     image: imfuzail/golang-app:latest
     ports:
-      - "8080:8080"
+      - "8082:8080"
