@@ -5,7 +5,7 @@ services:
     image: imfuzail/wordpress-site
     container_name: wordpress
     ports:
-      - "8080:80"
+      - "8081:80"
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: wordpress
