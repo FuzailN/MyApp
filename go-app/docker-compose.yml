@@ -2,7 +2,6 @@ version: '3.8'
 
 services:
   web:
-    build: .
+    image: imfuzail/golang-app:latest
     ports:
       - "8080:8080"
-
