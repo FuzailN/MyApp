@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  nextjs:
-    build: .
+  web:
+    image: imfuzail/nextjs-app:latest
     ports:
       - "3000:3000"
