@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   wordpress:
-    image: wordpress:latest
+    image: imfuzail/wordpress-site
     container_name: wordpress
     ports:
       - "8080:80"
