@@ -44,10 +44,10 @@ jobs:
         run: |
           # Wait for services to be healthy
           sleep 30
-          docker-compose -f wordpress-app/docker-compose.yml exec wordpress bash -c "curl -sSf http://localhost:80 > /dev/null"
+          docker-compose -f docker-compose.yml exec wordpress bash -c "curl -sSf http://localhost:8081 > /dev/null"
           # Run your tests here, e.g., PHP CodeSniffer and PHPUnit tests
-          docker-compose -f wordpress-app/docker-compose.yml exec wordpress bash -c "vendor/bin/phpcs"
-          docker-compose -f wordpress-app/docker-compose.yml exec wordpress bash -c "vendor/bin/phpunit"
+          docker-compose -f docker-compose.yml exec wordpress bash -c "vendor/bin/phpcs"
+          docker-compose -f docker-compose.yml exec wordpress bash -c "vendor/bin/phpunit"
 
       - name: Tear down Docker containers
         run: |
