@@ -1,11 +1,14 @@
 name: Go CI
 
-on:
-  push:
-    branches:
-      - main
-      - 'feature/**'
+# on:
+#   push:
+#     branches:
+#       - main
+#       - 'feature/**'
 
+on:
+  workflow_dispatch:
+  
 jobs:
   build:
     runs-on: self-hosted
@@ -21,6 +24,17 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Install GolangCI-Lint
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.47.0
+        env:
+          GO111MODULE: on
+
+      - name: Run GolangCI-Lint
+        run: |
+          cd go-app
+          golangci-lint run
 
       - name: Build Docker image
         run: |
