@@ -1,4 +1,4 @@
-name: WordPress CI
+name: Go CI
 
 on:
   push:
