@@ -25,14 +25,14 @@ jobs:
       - name: Build Docker image
         run: |
           cd nextjs-app
-          docker build -t imfuzail/golang-app:latest .
+          docker build -t imfuzail/nextjs-app:latest .
         env:
           DOCKER_BUILDKIT: 1
           COMPOSE_DOCKER_CLI_BUILD: 1
 
       - name: Push Docker image to Docker Hub
         run: |
-          docker push imfuzail/golang-app:latest
+          docker push imfuzail/nextjs-app:latest
 
       - name: Start Docker Compose services
         run: |
