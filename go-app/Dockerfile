@@ -18,6 +18,9 @@ RUN apk add --no-cache libc6-compat
 
 COPY --from=builder /app/main .
 
+COPY --from=builder /app/templates ./templates
+COPY --from=builder /app/static ./static
+
 EXPOSE 8080
 
 CMD ["./main"]
