@@ -9,6 +9,7 @@ on:
 jobs:
   build:
     runs-on: self-hosted
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -48,8 +49,3 @@ jobs:
         run: |
           cd wordpress-app
           docker-compose exec wordpress bash -c "vendor/bin/phpcs --standard=phpcs.xml ."
-
-      - name: Tear down Docker containers
-        run: |
-          cd wordpress-app
-          docker-compose down
