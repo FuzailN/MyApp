@@ -37,6 +37,11 @@ jobs:
           cd nextjs-app
           npm run lint
 
+      - name: Build Next.js application
+        run: |
+          cd nextjs-app
+          npm run build
+
       - name: Run Prettier
         run: |
           cd nextjs-app
