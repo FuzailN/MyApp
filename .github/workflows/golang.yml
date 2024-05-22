@@ -2,9 +2,12 @@ name: Golang CI
 
 on:
   push:
-    branches:
-      - main
-      - 'feature/**'
+    paths:
+      - 'go-app/**'
+      - release/*
+  pull_request:
+    paths:
+      - 'go-app/**'
 
 jobs:
   build:
