@@ -2,9 +2,11 @@ name: NextJs CI
 
 on:
   push:
-    branches:
-      - main
-      - 'feature/**'
+    paths:
+      - 'nextjs-app/**'
+  pull_request:
+    paths:
+      - 'nextjs-app/**'
 
 jobs:
   build:
