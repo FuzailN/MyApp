@@ -2,9 +2,11 @@ name: WordPress CI
 
 on:
   push:
-    branches:
-      - main
-      - 'feature/**'
+    paths:
+      - 'wordpress-app/**'
+  pull_request:
+    paths:
+      - 'wordpress-app/**'
 
 jobs:
   build:
